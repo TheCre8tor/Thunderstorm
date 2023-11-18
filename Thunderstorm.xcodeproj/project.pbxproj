@@ -51,9 +51,9 @@
 		11762A102B09558200726F27 /* Thunderstorm */ = {
 			isa = PBXGroup;
 			children = (
-				11762A112B09558200726F27 /* ThunderstormApp.swift */,
-				11762A132B09558200726F27 /* ContentView.swift */,
-				11762A152B09558400726F27 /* Assets.xcassets */,
+				11762A212B09575F00726F27 /* App */,
+				11762A202B09573800726F27 /* Views */,
+				11762A1F2B09571000726F27 /* Resources */,
 				11762A172B09558400726F27 /* Preview Content */,
 			);
 			path = Thunderstorm;
@@ -65,6 +65,30 @@
 				11762A182B09558400726F27 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		11762A1F2B09571000726F27 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				11762A152B09558400726F27 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		11762A202B09573800726F27 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				11762A132B09558200726F27 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		11762A212B09575F00726F27 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				11762A112B09558200726F27 /* ThunderstormApp.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
