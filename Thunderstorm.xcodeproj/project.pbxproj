@@ -10,6 +10,12 @@
 		117592C82B0A0C62001A53BD /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117592C72B0A0C62001A53BD /* Location.swift */; };
 		117592CA2B0A1299001A53BD /* LocationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117592C92B0A1299001A53BD /* LocationCellViewModel.swift */; };
 		117592CE2B0A1AEC001A53BD /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117592CD2B0A1AEC001A53BD /* LocationCell.swift */; };
+		117592D12B0AA533001A53BD /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117592D02B0AA533001A53BD /* LocationView.swift */; };
+		117592D42B0AA5C5001A53BD /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117592D32B0AA5C5001A53BD /* LocationViewModel.swift */; };
+		117592D62B0AA712001A53BD /* CurrentConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117592D52B0AA712001A53BD /* CurrentConditionsView.swift */; };
+		117592D82B0AA72E001A53BD /* CurrentConditionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117592D72B0AA72E001A53BD /* CurrentConditionsViewModel.swift */; };
+		117592DA2B0AA7CF001A53BD /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117592D92B0AA7CF001A53BD /* ForecastView.swift */; };
+		117592DC2B0AA7E4001A53BD /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117592DB2B0AA7E4001A53BD /* ForecastViewModel.swift */; };
 		11762A122B09558200726F27 /* ThunderstormApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11762A112B09558200726F27 /* ThunderstormApp.swift */; };
 		11762A162B09558400726F27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11762A152B09558400726F27 /* Assets.xcassets */; };
 		11762A192B09558400726F27 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11762A182B09558400726F27 /* Preview Assets.xcassets */; };
@@ -21,6 +27,12 @@
 		117592C72B0A0C62001A53BD /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		117592C92B0A1299001A53BD /* LocationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCellViewModel.swift; sourceTree = "<group>"; };
 		117592CD2B0A1AEC001A53BD /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		117592D02B0AA533001A53BD /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		117592D32B0AA5C5001A53BD /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		117592D52B0AA712001A53BD /* CurrentConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentConditionsView.swift; sourceTree = "<group>"; };
+		117592D72B0AA72E001A53BD /* CurrentConditionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentConditionsViewModel.swift; sourceTree = "<group>"; };
+		117592D92B0AA7CF001A53BD /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
+		117592DB2B0AA7E4001A53BD /* ForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewModel.swift; sourceTree = "<group>"; };
 		11762A0E2B09558200726F27 /* Thunderstorm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thunderstorm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11762A112B09558200726F27 /* ThunderstormApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThunderstormApp.swift; sourceTree = "<group>"; };
 		11762A152B09558400726F27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,6 +58,27 @@
 				117592C72B0A0C62001A53BD /* Location.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		117592CF2B0AA509001A53BD /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				117592D22B0AA575001A53BD /* ViewModels */,
+				117592D02B0AA533001A53BD /* LocationView.swift */,
+				117592D52B0AA712001A53BD /* CurrentConditionsView.swift */,
+				117592D92B0AA7CF001A53BD /* ForecastView.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		117592D22B0AA575001A53BD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				117592D32B0AA5C5001A53BD /* LocationViewModel.swift */,
+				117592D72B0AA72E001A53BD /* CurrentConditionsViewModel.swift */,
+				117592DB2B0AA7E4001A53BD /* ForecastViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		11762A052B09558200726F27 = {
@@ -95,6 +128,7 @@
 		11762A202B09573800726F27 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				117592CF2B0AA509001A53BD /* Location */,
 				11762A222B09590100726F27 /* Locations */,
 			);
 			path = Views;
@@ -197,12 +231,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				117592D82B0AA72E001A53BD /* CurrentConditionsViewModel.swift in Sources */,
+				117592D62B0AA712001A53BD /* CurrentConditionsView.swift in Sources */,
 				117592CE2B0A1AEC001A53BD /* LocationCell.swift in Sources */,
 				11762A242B09592300726F27 /* LocationsView.swift in Sources */,
+				117592DA2B0AA7CF001A53BD /* ForecastView.swift in Sources */,
 				11762A122B09558200726F27 /* ThunderstormApp.swift in Sources */,
 				117592C82B0A0C62001A53BD /* Location.swift in Sources */,
+				117592D12B0AA533001A53BD /* LocationView.swift in Sources */,
 				11762A272B095A5400726F27 /* LocationsViewModel.swift in Sources */,
+				117592DC2B0AA7E4001A53BD /* ForecastViewModel.swift in Sources */,
 				117592CA2B0A1299001A53BD /* LocationCellViewModel.swift in Sources */,
+				117592D42B0AA5C5001A53BD /* LocationViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

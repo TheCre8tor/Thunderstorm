@@ -12,6 +12,10 @@ struct LocationCellViewModel: Identifiable {
     // MARK: - Properties
     private let location: Location
     
+    var locationViewModel: LocationViewModel {
+        LocationViewModel(location: location)
+    }
+    
     // MARK: - Identifiable
     var id: String { location.id }
     
