@@ -12,8 +12,17 @@ struct LocationsView: View {
     
     var body: some View {
         NavigationStack {
-            Text("Hello, World!")
-                .navigationTitle(viewModel.title)
+            ScrollView {
+                LazyVGrid(
+                    columns: [GridItem()],
+                    spacing: 20.0,
+                    pinnedViews: /*@START_MENU_TOKEN@*/[]/*@END_MENU_TOKEN@*/
+                ) {
+                    ForEach(viewModel.locationCellViewModels) { viewModel in
+                        LocationCell(viewModel: viewModel)
+                    }
+                }.padding()
+            }.navigationTitle(viewModel.title)
         }
     }
 }
