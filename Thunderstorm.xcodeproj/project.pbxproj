@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		11762A122B09558200726F27 /* ThunderstormApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11762A112B09558200726F27 /* ThunderstormApp.swift */; };
-		11762A142B09558200726F27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11762A132B09558200726F27 /* ContentView.swift */; };
 		11762A162B09558400726F27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11762A152B09558400726F27 /* Assets.xcassets */; };
 		11762A192B09558400726F27 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11762A182B09558400726F27 /* Preview Assets.xcassets */; };
+		11762A242B09592300726F27 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11762A232B09592300726F27 /* LocationsView.swift */; };
+		11762A272B095A5400726F27 /* LocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11762A262B095A5400726F27 /* LocationsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		11762A0E2B09558200726F27 /* Thunderstorm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thunderstorm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11762A112B09558200726F27 /* ThunderstormApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThunderstormApp.swift; sourceTree = "<group>"; };
-		11762A132B09558200726F27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		11762A152B09558400726F27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11762A182B09558400726F27 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		11762A232B09592300726F27 /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
+		11762A262B095A5400726F27 /* LocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +80,7 @@
 		11762A202B09573800726F27 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				11762A132B09558200726F27 /* ContentView.swift */,
+				11762A222B09590100726F27 /* Locations */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -89,6 +91,23 @@
 				11762A112B09558200726F27 /* ThunderstormApp.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		11762A222B09590100726F27 /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				11762A252B095A3400726F27 /* ViewModels */,
+				11762A232B09592300726F27 /* LocationsView.swift */,
+			);
+			path = Locations;
+			sourceTree = "<group>";
+		};
+		11762A252B095A3400726F27 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				11762A262B095A5400726F27 /* LocationsViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,8 +180,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11762A142B09558200726F27 /* ContentView.swift in Sources */,
+				11762A242B09592300726F27 /* LocationsView.swift in Sources */,
 				11762A122B09558200726F27 /* ThunderstormApp.swift in Sources */,
+				11762A272B095A5400726F27 /* LocationsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
