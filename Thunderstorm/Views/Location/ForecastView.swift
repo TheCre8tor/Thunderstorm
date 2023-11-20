@@ -15,7 +15,13 @@ struct ForecastView: View {
     // MARK: - View
     
     var body: some View {
-        Text("Forecast View")
+        ScrollView {
+            LazyVGrid(columns: [GridItem()], content: {
+                ForEach(viewModel.forecastCellViewModels) { viewModel in
+                    ForecastCell(viewModel: viewModel)
+                }
+            }).padding()
+        }
     }
 }
 

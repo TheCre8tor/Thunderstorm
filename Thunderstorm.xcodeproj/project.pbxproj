@@ -16,6 +16,8 @@
 		117592D82B0AA72E001A53BD /* CurrentConditionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117592D72B0AA72E001A53BD /* CurrentConditionsViewModel.swift */; };
 		117592DA2B0AA7CF001A53BD /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117592D92B0AA7CF001A53BD /* ForecastView.swift */; };
 		117592DC2B0AA7E4001A53BD /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117592DB2B0AA7E4001A53BD /* ForecastViewModel.swift */; };
+		117592DE2B0AF97F001A53BD /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117592DD2B0AF97F001A53BD /* ForecastCell.swift */; };
+		117592E02B0AF9EB001A53BD /* ForecastCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117592DF2B0AF9EB001A53BD /* ForecastCellViewModel.swift */; };
 		11762A122B09558200726F27 /* ThunderstormApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11762A112B09558200726F27 /* ThunderstormApp.swift */; };
 		11762A162B09558400726F27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11762A152B09558400726F27 /* Assets.xcassets */; };
 		11762A192B09558400726F27 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11762A182B09558400726F27 /* Preview Assets.xcassets */; };
@@ -33,6 +35,8 @@
 		117592D72B0AA72E001A53BD /* CurrentConditionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentConditionsViewModel.swift; sourceTree = "<group>"; };
 		117592D92B0AA7CF001A53BD /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
 		117592DB2B0AA7E4001A53BD /* ForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewModel.swift; sourceTree = "<group>"; };
+		117592DD2B0AF97F001A53BD /* ForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
+		117592DF2B0AF9EB001A53BD /* ForecastCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCellViewModel.swift; sourceTree = "<group>"; };
 		11762A0E2B09558200726F27 /* Thunderstorm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thunderstorm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11762A112B09558200726F27 /* ThunderstormApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThunderstormApp.swift; sourceTree = "<group>"; };
 		11762A152B09558400726F27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,6 +71,7 @@
 				117592D02B0AA533001A53BD /* LocationView.swift */,
 				117592D52B0AA712001A53BD /* CurrentConditionsView.swift */,
 				117592D92B0AA7CF001A53BD /* ForecastView.swift */,
+				117592DD2B0AF97F001A53BD /* ForecastCell.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -77,6 +82,7 @@
 				117592D32B0AA5C5001A53BD /* LocationViewModel.swift */,
 				117592D72B0AA72E001A53BD /* CurrentConditionsViewModel.swift */,
 				117592DB2B0AA7E4001A53BD /* ForecastViewModel.swift */,
+				117592DF2B0AF9EB001A53BD /* ForecastCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -240,8 +246,10 @@
 				117592C82B0A0C62001A53BD /* Location.swift in Sources */,
 				117592D12B0AA533001A53BD /* LocationView.swift in Sources */,
 				11762A272B095A5400726F27 /* LocationsViewModel.swift in Sources */,
+				117592E02B0AF9EB001A53BD /* ForecastCellViewModel.swift in Sources */,
 				117592DC2B0AA7E4001A53BD /* ForecastViewModel.swift in Sources */,
 				117592CA2B0A1299001A53BD /* LocationCellViewModel.swift in Sources */,
+				117592DE2B0AF97F001A53BD /* ForecastCell.swift in Sources */,
 				117592D42B0AA5C5001A53BD /* LocationViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,6 +20,10 @@ struct LocationViewModel {
         ForecastViewModel()
     }
     
+    var locationName: String {
+        location.name
+    }
+    
     // MARK: - Initialization
     
     init(location: Location) {

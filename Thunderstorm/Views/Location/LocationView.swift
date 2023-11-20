@@ -23,10 +23,12 @@ struct LocationView: View {
             ForecastView(
                 viewModel: viewModel.forecastViewModel
             )
-        })
+        }).navigationTitle(viewModel.locationName)
     }
 }
 
 #Preview {
-    LocationView(viewModel: .init(location: .preview))
+    NavigationView {
+        LocationView(viewModel: .init(location: .preview))
+    }
 }
