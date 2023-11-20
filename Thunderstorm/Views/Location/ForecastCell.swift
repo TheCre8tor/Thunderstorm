@@ -15,10 +15,46 @@ struct ForecastCell: View {
     // MARK: - View
     
     var body: some View {
-        Text(viewModel.temperature())
+        HStack {
+            VStack(alignment: .leading, content: {
+                Text(viewModel.day)
+                    .font(.title)
+                    .foregroundColor(.accentColor)
+                
+                Group {
+                    Text(viewModel.date)
+                    Spacer()
+                    Text(viewModel.summary)
+                }
+                .font(.body)
+                .foregroundColor(.darkzGray)
+                
+            })
+            
+            Spacer()
+            
+            VStack(alignment: .trailing, content: {
+                Image(systemName: viewModel.imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 40.0)
+                    .foregroundColor(.darkzGray)
+                
+                Spacer()
+                
+                Text(viewModel.windSpeed)
+                    .font(.body)
+                    .foregroundColor(.darkzGray)
+                
+                HStack {
+                    Text("\(viewModel.lowTemperature()) - ")
+                    Text(viewModel.highTemperature())
+                }
+            })
+        }
     }
 }
 
 #Preview {
-    ForecastCell(viewModel: .init())
+    ForecastCell(viewModel: .init(forecastDate: Date()))
 }
