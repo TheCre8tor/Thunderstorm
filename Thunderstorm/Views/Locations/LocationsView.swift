@@ -12,6 +12,8 @@ struct LocationsView: View {
     
     internal let viewModel: LocationsViewModel
     
+    @State private var showsAddLocationView = false
+    
     // MARK: - View
     
     var body: some View {
@@ -22,6 +24,16 @@ struct LocationsView: View {
                     spacing: 20.0,
                     pinnedViews: /*@START_MENU_TOKEN@*/[]/*@END_MENU_TOKEN@*/
                 ) {
+                    Button(action: {
+                        showsAddLocationView.toggle()
+                    }, label: {
+                        Text(viewModel.addLocationTitle)
+                    })
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(Color.accentColor)
+                    .clipShape(Capsule())
+                    
                     ForEach(viewModel.locationCellViewModels) { viewModel in
                         NavigationLink(
                             destination: LocationView(
@@ -33,7 +45,12 @@ struct LocationsView: View {
                         )
                     }
                 }.padding()
-            }.navigationTitle(viewModel.title)
+            }
+            .navigationTitle(viewModel.title)
+            .sheet(isPresented: $showsAddLocationView, content: {
+                AddLocationView(viewModel: .init())
+            })
+            
         }
     }
 }
