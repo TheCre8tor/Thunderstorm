@@ -11,6 +11,7 @@ struct LocationView: View {
     // MARK: - Properties
     
     let viewModel: LocationViewModel
+    //
     
     // MARK: - View
     
