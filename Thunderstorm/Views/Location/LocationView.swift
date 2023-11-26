@@ -27,8 +27,8 @@ struct LocationView: View {
     }
 }
 
-#Preview {
-    NavigationView {
-        LocationView(viewModel: .init(location: .preview))
-    }
-}
+//#Preview {
+//    NavigationView {
+//        LocationView(viewModel: .init(location: .preview))
+//    }
+//}

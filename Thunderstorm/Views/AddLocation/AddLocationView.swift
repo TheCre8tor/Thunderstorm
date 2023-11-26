@@ -28,7 +28,9 @@ struct AddLocationView: View {
                     AddLocationCell(
                         viewModel: cellViewModel,
                         didTapPlusButton: {
-                            viewModel.addLocation(with: cellViewModel.id)
+                            viewModel.addLocation(
+                                with: cellViewModel.id
+                            )
                             showsAddLocationView.wrappedValue.toggle()
                         }
                     )
@@ -40,9 +42,13 @@ struct AddLocationView: View {
     }
 }
 
-#Preview {
-    AddLocationView(
-        viewModel: .init(),
-        showsAddLocationView: Binding.constant(true)
-    )
-}
+//#Preview {
+//    let viewModel = AddLocationViewModel(
+//        geocodingService: GeocodingPreviewClient()
+//    )
+//    
+//    return AddLocationView(
+//        viewModel: viewModel,
+//        showsAddLocationView: Binding.constant(true)
+//    )
+//}

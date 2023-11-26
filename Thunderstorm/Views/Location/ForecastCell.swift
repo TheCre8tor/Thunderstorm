@@ -55,6 +55,6 @@ struct ForecastCell: View {
     }
 }
 
-#Preview {
-    ForecastCell(viewModel: .init(forecastDate: Date()))
-}
+//#Preview {
+//    ForecastCell(viewModel: .init(forecastDate: Date()))
+//}

@@ -49,7 +49,7 @@ struct LocationsView: View {
             .navigationTitle(viewModel.title)
             .sheet(isPresented: $showsAddLocationView, content: {
                 AddLocationView(
-                    viewModel: .init(),
+                    viewModel: viewModel.addLocationViewModel,
                     showsAddLocationView: $showsAddLocationView
                 )
             })
@@ -58,6 +58,6 @@ struct LocationsView: View {
     }
 }
 
-#Preview {
-    LocationsView(viewModel: .init())
-}
+//#Preview {
+//    LocationsView(viewModel: .init())
+//}

@@ -7,7 +7,7 @@
 
 import Foundation
 
-// This serves as BLOC
+@MainActor
 struct LocationsViewModel {
     var title: String = "Thunderstorm"
     
@@ -16,5 +16,9 @@ struct LocationsViewModel {
     var locationCellViewModels: [LocationCellViewModel] {
         Location.previews.map { LocationCellViewModel(location: $0) }
         // Location.previews().map(LocationCellViewModel.init)
+    }
+    
+    var addLocationViewModel: AddLocationViewModel { 
+        AddLocationViewModel(geocodingService: GeocodingClient())
     }
 }

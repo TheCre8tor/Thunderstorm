@@ -45,9 +45,9 @@ struct AddLocationCell: View {
     }
 }
 
-#Preview {
-    AddLocationCell(
-        viewModel: .init(location: .preview),
-        didTapPlusButton: {}
-    )
-}
+//#Preview {
+//    AddLocationCell(
+//        viewModel: .init(location: .preview),
+//        didTapPlusButton: {}
+//    )
+//}
