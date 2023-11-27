@@ -31,6 +31,8 @@ internal final class AddLocationViewModel: ObservableObject {
     
     // MARK: - Properties
     
+    private let store: Store
+    
     private let geocodingService: GeocodingService
     
     var textFieldPlaceholder: String = "Enter the name of a city ..."
@@ -39,7 +41,8 @@ internal final class AddLocationViewModel: ObservableObject {
     
     // MARK: - Initialization
     
-    init(geocodingService: GeocodingService) {
+    init(store: Store, geocodingService: GeocodingService) {
+        self.store = store
         self.geocodingService = geocodingService
         setupBindings()
     }
@@ -53,7 +56,7 @@ internal final class AddLocationViewModel: ObservableObject {
         
         // Add Location
         do {
-            try UserDefaults.standard.addLocation(location)
+            try store.addLocation(location)
         } catch {
             print("Unable to Add Location \(error)")
         }

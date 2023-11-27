@@ -51,17 +51,6 @@ struct AddLocationView: View {
     }
 }
 
-//#Preview {
-//    let viewModel = AddLocationViewModel(
-//        geocodingService: GeocodingPreviewClient()
-//    )
-//    
-//    return AddLocationView(
-//        viewModel: viewModel,
-//        showsAddLocationView: Binding.constant(true)
-//    )
-//}
-
 fileprivate struct MessageView: View {
     enum Style {
         case progressView
@@ -77,7 +66,7 @@ fileprivate struct MessageView: View {
             switch style {
             case .progressView:
                 ProgressView()
-            case .message(let message):
+            case .message(let message): 
                 Text(message)
                     .font(.body)
                     .foregroundColor(.darkzGray)
@@ -87,3 +76,16 @@ fileprivate struct MessageView: View {
         }
     }
 }
+
+#Preview {
+    let viewModel = AddLocationViewModel(
+        store: PreviewStore(),
+        geocodingService: GeocodingPreviewClient()
+    )
+    
+    return AddLocationView(
+        viewModel: viewModel,
+        showsAddLocationView: Binding.constant(true)
+    )
+}
+

@@ -32,6 +32,6 @@ struct CurrentConditionsView: View {
     }
 }
 
-//#Preview {
-//    CurrentConditionsView(viewModel: .init())
-//}
+#Preview {
+    CurrentConditionsView(viewModel: .init())
+}

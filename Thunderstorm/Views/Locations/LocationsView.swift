@@ -60,6 +60,6 @@ struct LocationsView: View {
     }
 }
 
-//#Preview {
-//    LocationsView(viewModel: .init())
-//}
+#Preview {
+    LocationsView(viewModel: .init(store: PreviewStore()))
+}

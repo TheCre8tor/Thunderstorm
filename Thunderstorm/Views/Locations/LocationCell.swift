@@ -59,7 +59,7 @@ struct LocationCell: View {
     }
 }
 
-//#Preview {
-//    let viewModel = LocationCellViewModel(location: .preview)
-//    return LocationCell(viewModel: viewModel)
-//}
+#Preview {
+    let viewModel = LocationCellViewModel(location: .preview)
+    return LocationCell(viewModel: viewModel)
+}
