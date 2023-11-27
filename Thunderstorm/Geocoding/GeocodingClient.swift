@@ -12,11 +12,18 @@ final class GeocodingClient: GeocodingService {
     
     enum GeocodingError: Error {
         case invalidAddressString
+        case requestFailed
     }
     
     // MARK: - Properties
     
-    private let geocoder = CLGeocoder()
+    private let geocoder: Geocoder
+    
+    // MARK: - Initialization
+    
+    init(geocoder: Geocoder = CLGeocoder()) {
+        self.geocoder = geocoder
+    } 
     
     // MARK: - Geocoding Service
     
@@ -26,12 +33,14 @@ final class GeocodingClient: GeocodingService {
         }
         
         do {
-            let placemarks = try await geocoder.geocodeAddressString(addressString)
-            placemarks.compactMap { placemark -> Location? in
-                
+            let geocode = try await geocoder.geocodeAddressString(addressString)
+            
+            return geocode.compactMap { placemark in
+                Location(placemark: placemark)
             }
         } catch {
-            
+            print("Unable to Geocode \(addressString) \(error)")
+            throw GeocodingError.requestFailed
         }
     }
 }

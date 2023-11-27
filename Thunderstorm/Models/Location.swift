@@ -5,10 +5,11 @@
 //  Created by Alexander Nitiola on 19/11/2023.
 //
 
-import Foundation
+import CoreLocation
 
 struct Location: Codable {
     // MARK: - Properties
+    
     let id: String
     let name: String
     let country: String
@@ -45,6 +46,34 @@ struct Location: Codable {
             )
         ]
     }
+    
+    // MARK: - Initialization
+    
+    init(id: String, name: String, country: String, latitude: Double, longitude: Double) {
+        self.id = id
+        self.name = name
+        self.country = country
+        self.latitude = latitude
+        self.longitude = longitude
+    }
+    
+    init?(placemark location: CLPlacemark) {
+        guard
+            let name = location.name,
+            let country = location.country,
+            let coordinate = location.location?.coordinate
+        else {
+            return nil
+        }
+        
+        id = UUID().uuidString
+        self.name = name
+        self.country = country
+        latitude = coordinate.latitude
+        longitude = coordinate.longitude
+    }
+    
+    // MARK: - Methods
     
     static func previewsData() -> Data {
         try! JSONEncoder().encode(Location.previews)
