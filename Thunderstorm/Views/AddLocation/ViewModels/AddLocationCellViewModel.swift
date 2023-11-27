@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AddLocationCellViewModel: Identifiable {
+struct AddLocationCellViewModel: Equatable, Identifiable {
     // MARK: - Properties
     
     private let location: Location
