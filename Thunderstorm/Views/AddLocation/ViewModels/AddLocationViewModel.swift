@@ -41,7 +41,7 @@ internal final class AddLocationViewModel: ObservableObject {
     
     init(geocodingService: GeocodingService) {
         self.geocodingService = geocodingService
-        
+        print("Binding started...")
         setupBindings()
     }
     
@@ -58,6 +58,7 @@ internal final class AddLocationViewModel: ObservableObject {
     // MARK: - Helper Methods
     
     private func setupBindings() {
+        print("Binding is dynamic...")
         $query
             .throttle(for: 1.0, scheduler: RunLoop.main, latest: true)
             .filter { !$0.isEmpty }

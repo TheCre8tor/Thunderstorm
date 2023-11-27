@@ -22,20 +22,29 @@ struct AddLocationView: View {
                 viewModel.textFieldPlaceholder,
                 text: $viewModel.query
             ).padding()
-        
-            List {
-                ForEach(viewModel.addLocationCellViewModels) { cellViewModel in
-                    AddLocationCell(
-                        viewModel: cellViewModel,
-                        didTapPlusButton: {
-                            viewModel.addLocation(
-                                with: cellViewModel.id
-                            )
-                            showsAddLocationView.wrappedValue.toggle()
-                        }
-                    )
-                }
             
+            switch viewModel.state {
+            case .empty:
+                Spacer()
+            case .querying:
+                MessageView(style: .progressView)
+            case .message(let message):
+                MessageView(style: .message(message))
+            case .results(let viewModels):
+                List {
+                    ForEach(viewModels) { cellViewModel in
+                        AddLocationCell(
+                            viewModel: cellViewModel,
+                            didTapPlusButton: {
+                                viewModel.addLocation(
+                                    with: cellViewModel.id
+                                )
+                                showsAddLocationView.wrappedValue.toggle()
+                            }
+                        )
+                    }
+                
+                }
             }
         }
         
@@ -52,3 +61,29 @@ struct AddLocationView: View {
 //        showsAddLocationView: Binding.constant(true)
 //    )
 //}
+
+fileprivate struct MessageView: View {
+    enum Style {
+        case progressView
+        case message(String)
+    }
+    
+    let style: Style
+    
+    var body: some View {
+        VStack {
+            Spacer()
+            
+            switch style {
+            case .progressView:
+                ProgressView()
+            case .message(let message):
+                Text(message)
+                    .font(.body)
+                    .foregroundColor(.darkzGray)
+            }
+            
+            Spacer()
+        }
+    }
+}
