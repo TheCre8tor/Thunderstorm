@@ -10,7 +10,7 @@ import SwiftUI
 struct LocationsView: View {
     // MARK: - Properties
     
-    internal let viewModel: LocationsViewModel
+    @ObservedObject private(set) var viewModel: LocationsViewModel
     
     @State private var showsAddLocationView = false
     
@@ -54,6 +54,8 @@ struct LocationsView: View {
                 )
             })
             
+        }.onAppear {
+            viewModel.start()
         }
     }
 }

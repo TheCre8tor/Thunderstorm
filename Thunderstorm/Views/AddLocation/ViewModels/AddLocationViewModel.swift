@@ -41,24 +41,27 @@ internal final class AddLocationViewModel: ObservableObject {
     
     init(geocodingService: GeocodingService) {
         self.geocodingService = geocodingService
-        print("Binding started...")
         setupBindings()
     }
     
     // MARK: - Public API
     
     func addLocation(with id: String) -> Void {
-        guard let locations = locations.first(where: { $0.id == id}) else {
+        guard let location = locations.first(where: { $0.id == id}) else {
             return
         }
         
         // Add Location
+        do {
+            try UserDefaults.standard.addLocation(location)
+        } catch {
+            print("Unable to Add Location \(error)")
+        }
     }
     
     // MARK: - Helper Methods
     
     private func setupBindings() {
-        print("Binding is dynamic...")
         $query
             .throttle(for: 1.0, scheduler: RunLoop.main, latest: true)
             .filter { !$0.isEmpty }

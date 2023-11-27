@@ -8,17 +8,28 @@
 import Foundation
 
 @MainActor
-struct LocationsViewModel {
+final class LocationsViewModel: ObservableObject {
+    // MARK: - Properties
+    
     var title: String = "Thunderstorm"
     
     var addLocationTitle: String = "Add a Location"
     
-    var locationCellViewModels: [LocationCellViewModel] {
-        Location.previews.map { LocationCellViewModel(location: $0) }
-        // Location.previews().map(LocationCellViewModel.init)
-    }
+    @Published private(set) var locationCellViewModels: [LocationCellViewModel] = []
     
     var addLocationViewModel: AddLocationViewModel { 
         AddLocationViewModel(geocodingService: GeocodingClient())
+    }
+    
+    // MARK: -
+    
+    func start() {
+        UserDefaults.standard.publisher(for: \.locations)
+            .compactMap { $0 }
+            .decode(type: [Location].self, decoder: JSONDecoder())
+            .replaceError(with: [])
+            .map { $0.map { LocationCellViewModel(location: $0) } }
+            .eraseToAnyPublisher()
+            .assign(to: &$locationCellViewModels)
     }
 }
