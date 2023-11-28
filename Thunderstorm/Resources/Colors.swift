@@ -10,12 +10,12 @@ import SwiftUI
 
 extension UIColor {
     static var darkGray: UIColor {
-        UIColor(named: "DarkGray")!
+        UIColor(named: "DarkzGray")!
     }
 }
 
 extension Color {
-    static var darkzGray: Color {
+    static var darkGray: Color {
         Color(uiColor: .darkGray)
     }
 }
