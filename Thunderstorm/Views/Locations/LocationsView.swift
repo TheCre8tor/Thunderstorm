@@ -61,5 +61,10 @@ struct LocationsView: View {
 }
 
 #Preview {
-    LocationsView(viewModel: .init(store: PreviewStore()))
+    LocationsView(
+        viewModel: LocationsViewModel(
+            store: PreviewStore(),
+            weatherService: WeatherPreviewClient()
+        )
+    )
 }

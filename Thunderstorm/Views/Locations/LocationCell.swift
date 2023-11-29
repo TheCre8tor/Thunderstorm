@@ -10,7 +10,7 @@ import SwiftUI
 struct LocationCell: View {
     // MARK: - Properties
     
-    let viewModel: LocationCellViewModel
+    @ObservedObject var viewModel: LocationCellViewModel
     
     // MARK: - View
     
@@ -25,7 +25,7 @@ struct LocationCell: View {
                     .foregroundColor(.gray)
                 Spacer()
                 if let summary = viewModel.summary {
-                    Text(summary)
+                    Text(summary).multilineTextAlignment(.leading)
                 }
             }
             Spacer()
@@ -56,10 +56,17 @@ struct LocationCell: View {
                 .stroke(Color.gray)
                 .opacity(0.25)
         }
+        .task {
+            await viewModel.start()
+        }
     }
 }
 
 #Preview {
-    let viewModel = LocationCellViewModel(location: .preview)
+    let viewModel = LocationCellViewModel(
+        location: .preview,
+        service: WeatherPreviewClient()
+    )
+    
     return LocationCell(viewModel: viewModel)
 }

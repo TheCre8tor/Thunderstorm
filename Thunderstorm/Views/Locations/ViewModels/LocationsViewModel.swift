@@ -13,6 +13,8 @@ final class LocationsViewModel: ObservableObject {
     
     private let store: Store
     
+    private let weatherService: WeatherService
+    
     var title: String = "Thunderstorm"
     
     var addLocationTitle: String = "Add a Location"
@@ -25,15 +27,25 @@ final class LocationsViewModel: ObservableObject {
     
     // MARK: - Initializer
     
-    init(store: Store) {
+    init(store: Store, weatherService: WeatherService) {
         self.store = store
+        self.weatherService = weatherService
     }
     
     // MARK: - Public API
     
     func start() {
+        let weatherService = self.weatherService
+        
         store.locationsPublisher
-            .map { $0.map { LocationCellViewModel(location: $0) } }
+            .map { locations in
+                locations.map { location in
+                    LocationCellViewModel(
+                        location: location,
+                        service: weatherService
+                    )
+                }
+            }
             .eraseToAnyPublisher()
             .assign(to: &$locationCellViewModels)
     }
