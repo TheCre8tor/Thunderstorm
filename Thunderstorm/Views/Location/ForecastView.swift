@@ -26,5 +26,9 @@ struct ForecastView: View {
 }
 
 #Preview {
-    ForecastView(viewModel: .init())
+    ForecastView(
+        viewModel: .init(
+            forecast: WeatherData.preview.forecast
+        )
+    )
 }

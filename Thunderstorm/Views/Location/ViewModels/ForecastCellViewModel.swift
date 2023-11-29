@@ -10,47 +10,65 @@ import Foundation
 struct ForecastCellViewModel: Identifiable {
     // MARK: - Properties
     
-    private let forecastDate: Date
+    private let dayConditions: WeatherData.DayConditions
     
     private let dateFormatter = DateFormatter()
+    
+    private let measurementFormatter = ClearSkyFormatter()
     
     var id: UUID { UUID() }
     
     var day: String {
         dateFormatter.dateFormat = "EEEE"
-        return dateFormatter.string(from: forecastDate).capitalized
+        return dateFormatter.string(from: dayConditions.time).capitalized
     }
     
     var date: String {
         dateFormatter.dateFormat = "MMMM d"
-        return dateFormatter.string(from: forecastDate).capitalized
+        return dateFormatter.string(from: dayConditions.time).capitalized
     }
     
     var summary: String {
-        "Clear"
+        dayConditions.summary
     }
     
     var imageName: String {
-        "sun.max"
+        switch dayConditions.icon {
+        case "clear-day":
+            return "sun.max"
+        case "clear-night":
+            return "moon"
+        case "rain":
+            return "cloud.rain"
+        case "snow":
+            return "cloud.snow"
+        case "sleet":
+            return "cloud.sleet"
+        case "wind",
+             "cloudy",
+             "partly-cloudy-day",
+             "partly-cloudy-night":
+            return "cloud"
+        default:
+            return "sun.max"
+        }
     }
     
     var windSpeed: String {
-        let windSpeed = Int.random(in: 0...30)
-        return "\(windSpeed) mi/h"
+        measurementFormatter.formatWindSpeed(dayConditions.windSpeed)
     }
     
     // MARK: - Initialization
-    init(forecastDate: Date) {
-        self.forecastDate = forecastDate
+    
+    init(dayConditions: WeatherData.DayConditions) {
+        self.dayConditions = dayConditions
     }
     
     func lowTemperature() -> String {
-        let temperature = Int.random(in: 50...70)
-        return "\(temperature) °F"
+        measurementFormatter.formatTemperature(dayConditions.temperatureLow)
     }
     
     func highTemperature() -> String {
-        let temperature = Int.random(in: 70...90)
-        return "\(temperature) °F"
+        measurementFormatter.formatTemperature(dayConditions.temperatureHigh)
     }
 }
