@@ -18,4 +18,8 @@ final class PreviewStore: Store {
     func addLocation(_ location: Location) throws {
         locations.append(location)
     }
+    
+    func removeLocation(_ location: Location) throws {
+        locations.removeAll(where: { $0.id == location.id })
+    }
 }

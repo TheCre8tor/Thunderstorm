@@ -10,11 +10,10 @@ import Foundation
 struct CurrentConditionsViewModel {
     // MARK: - Properties
     
+    private let location: Location
+    private let store: Store
     private let currently: WeatherData.CurrentConditions
-    
     private let measurementFormatter = ClearSkyFormatter()
-    
-    // MARK: - Public API
     
     var summary: String {
         currently.summary
@@ -30,8 +29,25 @@ struct CurrentConditionsViewModel {
     
     // MARK: - Initialization
     
-    init(currently: WeatherData.CurrentConditions) {
+    init(
+        location: Location,
+        store: Store,
+        currently: WeatherData.CurrentConditions
+    ) {
+        self.location = location
+        self.store = store
         self.currently = currently
     }
     
+    // MARK: - Public API
+    
+    func delete() {
+        do {
+            try store.removeLocation(location)
+        } catch {
+            let message = String(describing: error)
+            print(message)
+        }
+    }
+ 
 }

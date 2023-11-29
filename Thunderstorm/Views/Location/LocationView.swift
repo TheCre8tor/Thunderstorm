@@ -51,7 +51,7 @@ struct LocationView: View {
         LocationView(
             viewModel: .init(
                 location: .preview,
-                weatherService: WeatherPreviewClient(result: .failure(.init()))
+                weatherService: WeatherPreviewClient()
             )
         )
     }
