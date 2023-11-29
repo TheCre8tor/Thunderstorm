@@ -7,18 +7,18 @@
 
 import Foundation
 
-struct LocationViewModel {
+@MainActor
+final class LocationViewModel: ObservableObject {
+    
     // MARK: - Properties
     
     private let location: Location
     
-    var currentConditionsViewModel: CurrentConditionsViewModel {
-        CurrentConditionsViewModel(currently: WeatherData.preview.currently)
-    }
+    private let weatherService: WeatherService
     
-    var forecastViewModel: ForecastViewModel {
-        ForecastViewModel(forecast: WeatherData.preview.forecast)
-    }
+    @Published private(set) var currentConditionsViewModel: CurrentConditionsViewModel?
+    
+    @Published private(set) var forecastViewModel: ForecastViewModel?
     
     var locationName: String {
         location.name
@@ -26,7 +26,22 @@ struct LocationViewModel {
     
     // MARK: - Initialization
     
-    init(location: Location) {
+    init(location: Location, weatherService: WeatherService) {
         self.location = location
+        self.weatherService = weatherService
+    }
+    
+    //  MARK: - Public API
+    
+    func start() async {
+        do {
+            let data = try await weatherService.weather(for: location)
+            
+            currentConditionsViewModel = .init(currently: data.currently)
+            forecastViewModel = .init(forecast: data.forecast)
+        } catch {
+            let message = String(describing: error)
+            print(message)
+        }
     }
 }

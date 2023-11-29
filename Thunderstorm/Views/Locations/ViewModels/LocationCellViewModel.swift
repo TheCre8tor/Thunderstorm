@@ -21,7 +21,10 @@ final class LocationCellViewModel: Identifiable, ObservableObject {
     @Published private var weatherData: WeatherData?
     
     var locationViewModel: LocationViewModel {
-        LocationViewModel(location: location)
+        LocationViewModel(
+            location: location,
+            weatherService: service
+        )
     }
     
     // MARK: - Initialization

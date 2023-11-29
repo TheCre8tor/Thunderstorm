@@ -10,25 +10,41 @@ import SwiftUI
 struct LocationView: View {
     // MARK: - Properties
     
-    let viewModel: LocationViewModel
+    @ObservedObject var viewModel: LocationViewModel
     
     // MARK: - View
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0.0, content: {
-            CurrentConditionsView(
-                viewModel: viewModel.currentConditionsViewModel
-            )
-            Divider()
-            ForecastView(
-                viewModel: viewModel.forecastViewModel
-            )
-        }).navigationTitle(viewModel.locationName)
+            
+            if let currentConditionsViewModel = viewModel.currentConditionsViewModel,
+               let forecastViewModel = viewModel.forecastViewModel {
+                CurrentConditionsView(
+                    viewModel: currentConditionsViewModel
+                )
+                Divider()
+                ForecastView(
+                    viewModel: forecastViewModel
+                )
+            } else {
+                ProgressView()
+            }
+            
+        })
+        .navigationTitle(viewModel.locationName)
+        .task {
+            await viewModel.start()
+        }
     }
 }
 
 #Preview {
     NavigationView {
-        LocationView(viewModel: .init(location: .preview))
+        LocationView(
+            viewModel: .init(
+                location: .preview,
+                weatherService: WeatherPreviewClient()
+            )
+        )
     }
 }
