@@ -10,15 +10,22 @@ import Foundation
 @MainActor
 final class LocationViewModel: ObservableObject {
     
+    enum State {
+        case fetching
+        case data(
+            currentConditionsViewModel: CurrentConditionsViewModel,
+            forecastViewModel: ForecastViewModel
+        )
+        case error(message: String)
+    }
+    
     // MARK: - Properties
     
     private let location: Location
     
     private let weatherService: WeatherService
     
-    @Published private(set) var currentConditionsViewModel: CurrentConditionsViewModel?
-    
-    @Published private(set) var forecastViewModel: ForecastViewModel?
+    @Published private(set) var state: State = .fetching
     
     var locationName: String {
         location.name
@@ -37,11 +44,15 @@ final class LocationViewModel: ObservableObject {
         do {
             let data = try await weatherService.weather(for: location)
             
-            currentConditionsViewModel = .init(currently: data.currently)
-            forecastViewModel = .init(forecast: data.forecast)
+            state = .data(
+                currentConditionsViewModel: .init(currently: data.currently),
+                forecastViewModel: .init(forecast: data.forecast)
+            )
+        
         } catch {
             let message = String(describing: error)
             print(message)
+            state = .error(message: message)
         }
     }
 }
