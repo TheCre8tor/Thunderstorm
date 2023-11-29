@@ -8,6 +8,7 @@
 import Foundation
 
 final class WeatherClient: WeatherService {
+    // MARK: -
     
     private let baseURL: URL
     private let apiKey: String
