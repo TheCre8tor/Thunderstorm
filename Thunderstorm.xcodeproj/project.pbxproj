@@ -42,6 +42,8 @@
 		478953B02B14759E00CF73F0 /* CLGeocoderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478953AF2B14759E00CF73F0 /* CLGeocoderExtension.swift */; };
 		47D3EED72B18044E00CE4210 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 47D3EED62B18044E00CE4210 /* Swinject */; };
 		47D3EED92B1804D900CE4210 /* Container+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3EED82B1804D900CE4210 /* Container+Helpers.swift */; };
+		47D3EEDB2B180EC900CE4210 /* AddLocationCellViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3EEDA2B180EC900CE4210 /* AddLocationCellViewModelTest.swift */; };
+		47D3EEDE2B180F5A00CE4210 /* Location+Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3EEDD2B180F5A00CE4210 /* Location+Mocks.swift */; };
 		47E4091D2B14F8350004D619 /* UserDefaults+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E4091C2B14F8350004D619 /* UserDefaults+Helpers.swift */; };
 		47E409202B151B1F0004D619 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E4091F2B151B1F0004D619 /* Store.swift */; };
 		47E409222B151C050004D619 /* UserDefaults+Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E409212B151C050004D619 /* UserDefaults+Store.swift */; };
@@ -99,6 +101,8 @@
 		478953AC2B14747700CF73F0 /* Geocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geocoder.swift; sourceTree = "<group>"; };
 		478953AF2B14759E00CF73F0 /* CLGeocoderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLGeocoderExtension.swift; sourceTree = "<group>"; };
 		47D3EED82B1804D900CE4210 /* Container+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+Helpers.swift"; sourceTree = "<group>"; };
+		47D3EEDA2B180EC900CE4210 /* AddLocationCellViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationCellViewModelTest.swift; sourceTree = "<group>"; };
+		47D3EEDD2B180F5A00CE4210 /* Location+Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+Mocks.swift"; sourceTree = "<group>"; };
 		47E4091C2B14F8350004D619 /* UserDefaults+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Helpers.swift"; sourceTree = "<group>"; };
 		47E4091F2B151B1F0004D619 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		47E409212B151C050004D619 /* UserDefaults+Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Store.swift"; sourceTree = "<group>"; };
@@ -294,6 +298,7 @@
 		47833A0E2B172D7D0029747D /* ThunderstormTests */ = {
 			isa = PBXGroup;
 			children = (
+				47D3EEDC2B180F1800CE4210 /* Extensions */,
 				47833A172B172D930029747D /* Cases */,
 			);
 			path = ThunderstormTests;
@@ -303,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				47833A182B172DDD0029747D /* ClearSkyFormatterTests.swift */,
+				47D3EEDA2B180EC900CE4210 /* AddLocationCellViewModelTest.swift */,
 			);
 			path = Cases;
 			sourceTree = "<group>";
@@ -313,6 +319,14 @@
 				478953AF2B14759E00CF73F0 /* CLGeocoderExtension.swift */,
 			);
 			path = Geocoder;
+			sourceTree = "<group>";
+		};
+		47D3EEDC2B180F1800CE4210 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				47D3EEDD2B180F5A00CE4210 /* Location+Mocks.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		47E4091B2B14F80F0004D619 /* Extensions */ = {
@@ -498,6 +512,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				47833A192B172DDD0029747D /* ClearSkyFormatterTests.swift in Sources */,
+				47D3EEDB2B180EC900CE4210 /* AddLocationCellViewModelTest.swift in Sources */,
+				47D3EEDE2B180F5A00CE4210 /* Location+Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
