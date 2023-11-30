@@ -12,6 +12,8 @@ struct CurrentConditionsView: View {
     
     let viewModel: CurrentConditionsViewModel
     
+    @Environment(\.dismiss) var dismiss
+    
     // MARK: - View
     
     var body: some View {
@@ -36,6 +38,7 @@ struct CurrentConditionsView: View {
             Button(
                 action: {
                     viewModel.delete()
+                    dismiss()
                 },
                 label: {
                     Image(systemName: "trash")

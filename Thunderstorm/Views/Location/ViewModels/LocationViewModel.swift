@@ -5,6 +5,7 @@
 //  Created by Alexander Nitiola on 19/11/2023.
 //
 
+import Swinject
 import Foundation
 
 @MainActor
@@ -47,7 +48,7 @@ final class LocationViewModel: ObservableObject {
             state = .data(
                 currentConditionsViewModel: .init(
                     location: location,
-                    store: ,
+                    store: Container.store,
                     currently: data.currently
                 ),
                 forecastViewModel: .init(forecast: data.forecast)

@@ -40,6 +40,8 @@
 		47833A192B172DDD0029747D /* ClearSkyFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47833A182B172DDD0029747D /* ClearSkyFormatterTests.swift */; };
 		478953AD2B14747700CF73F0 /* Geocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478953AC2B14747700CF73F0 /* Geocoder.swift */; };
 		478953B02B14759E00CF73F0 /* CLGeocoderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478953AF2B14759E00CF73F0 /* CLGeocoderExtension.swift */; };
+		47D3EED72B18044E00CE4210 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 47D3EED62B18044E00CE4210 /* Swinject */; };
+		47D3EED92B1804D900CE4210 /* Container+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3EED82B1804D900CE4210 /* Container+Helpers.swift */; };
 		47E4091D2B14F8350004D619 /* UserDefaults+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E4091C2B14F8350004D619 /* UserDefaults+Helpers.swift */; };
 		47E409202B151B1F0004D619 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E4091F2B151B1F0004D619 /* Store.swift */; };
 		47E409222B151C050004D619 /* UserDefaults+Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E409212B151C050004D619 /* UserDefaults+Store.swift */; };
@@ -96,6 +98,7 @@
 		47833A182B172DDD0029747D /* ClearSkyFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClearSkyFormatterTests.swift; path = ../../../../../../Documents/ClearSkyFormatterTests.swift; sourceTree = "<group>"; };
 		478953AC2B14747700CF73F0 /* Geocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geocoder.swift; sourceTree = "<group>"; };
 		478953AF2B14759E00CF73F0 /* CLGeocoderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLGeocoderExtension.swift; sourceTree = "<group>"; };
+		47D3EED82B1804D900CE4210 /* Container+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+Helpers.swift"; sourceTree = "<group>"; };
 		47E4091C2B14F8350004D619 /* UserDefaults+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Helpers.swift"; sourceTree = "<group>"; };
 		47E4091F2B151B1F0004D619 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		47E409212B151C050004D619 /* UserDefaults+Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Store.swift"; sourceTree = "<group>"; };
@@ -110,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47D3EED72B18044E00CE4210 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				47E4091C2B14F8350004D619 /* UserDefaults+Helpers.swift */,
+				47D3EED82B1804D900CE4210 /* Container+Helpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -356,6 +361,9 @@
 			dependencies = (
 			);
 			name = Thunderstorm;
+			packageProductDependencies = (
+				47D3EED62B18044E00CE4210 /* Swinject */,
+			);
 			productName = Thunderstorm;
 			productReference = 11762A0E2B09558200726F27 /* Thunderstorm.app */;
 			productType = "com.apple.product-type.application";
@@ -407,6 +415,9 @@
 				Base,
 			);
 			mainGroup = 11762A052B09558200726F27;
+			packageReferences = (
+				47D3EED52B18044E00CE4210 /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
 			productRefGroup = 11762A0F2B09558200726F27 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -453,6 +464,7 @@
 				478339E42B1680FD0029747D /* WeatherData+Preview.swift in Sources */,
 				117592D62B0AA712001A53BD /* CurrentConditionsView.swift in Sources */,
 				47E409202B151B1F0004D619 /* Store.swift in Sources */,
+				47D3EED92B1804D900CE4210 /* Container+Helpers.swift in Sources */,
 				117592CE2B0A1AEC001A53BD /* LocationCell.swift in Sources */,
 				478339F32B1721920029747D /* ClearSkyFormatter.swift in Sources */,
 				11762A242B09592300726F27 /* LocationsView.swift in Sources */,
@@ -749,6 +761,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		47D3EED52B18044E00CE4210 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		47D3EED62B18044E00CE4210 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 47D3EED52B18044E00CE4210 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 11762A062B09558200726F27 /* Project object */;
 }

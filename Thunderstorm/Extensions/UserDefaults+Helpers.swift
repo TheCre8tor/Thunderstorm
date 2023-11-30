@@ -38,9 +38,7 @@ extension UserDefaults {
             forkey: Keys.locations
         ) ?? []
         
-        locations.removeAll(where: { value in
-            value.id == location.id
-        })
+        locations.removeAll(where: { $0.id == location.id })
         
         try encode(locations, forKey: Keys.locations)
     }

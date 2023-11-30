@@ -6,17 +6,28 @@
 //
 
 import SwiftUI
+import Swinject
 
 @main
 struct ThunderstormApp: App {
+    init() {
+        registerServices()
+    }
+    
     var body: some Scene {
         WindowGroup {
             LocationsView(
                 viewModel: LocationsViewModel(
-                    store: UserDefaults.standard,
+                    store: Container.store,
                     weatherService: WeatherClient()
                 )
             )
         }
+    }
+    
+    private func registerServices() {
+        Container.shared.register(Store.self, factory: { _ in
+            UserDefaults.standard
+        })
     }
 }
