@@ -44,6 +44,9 @@
 		47D3EED92B1804D900CE4210 /* Container+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3EED82B1804D900CE4210 /* Container+Helpers.swift */; };
 		47D3EEDB2B180EC900CE4210 /* AddLocationCellViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3EEDA2B180EC900CE4210 /* AddLocationCellViewModelTest.swift */; };
 		47D3EEDE2B180F5A00CE4210 /* Location+Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3EEDD2B180F5A00CE4210 /* Location+Mocks.swift */; };
+		47D3EEE12B18143700CE4210 /* MockStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3EEE02B18143700CE4210 /* MockStore.swift */; };
+		47D3EEE32B18183100CE4210 /* MockGeocodingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3EEE22B18183100CE4210 /* MockGeocodingClient.swift */; };
+		47D3EEE72B181A6100CE4210 /* AddLocationsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3EEE62B181A6100CE4210 /* AddLocationsViewModelTests.swift */; };
 		47E4091D2B14F8350004D619 /* UserDefaults+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E4091C2B14F8350004D619 /* UserDefaults+Helpers.swift */; };
 		47E409202B151B1F0004D619 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E4091F2B151B1F0004D619 /* Store.swift */; };
 		47E409222B151C050004D619 /* UserDefaults+Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E409212B151C050004D619 /* UserDefaults+Store.swift */; };
@@ -103,6 +106,9 @@
 		47D3EED82B1804D900CE4210 /* Container+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+Helpers.swift"; sourceTree = "<group>"; };
 		47D3EEDA2B180EC900CE4210 /* AddLocationCellViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationCellViewModelTest.swift; sourceTree = "<group>"; };
 		47D3EEDD2B180F5A00CE4210 /* Location+Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+Mocks.swift"; sourceTree = "<group>"; };
+		47D3EEE02B18143700CE4210 /* MockStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStore.swift; sourceTree = "<group>"; };
+		47D3EEE22B18183100CE4210 /* MockGeocodingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGeocodingClient.swift; sourceTree = "<group>"; };
+		47D3EEE62B181A6100CE4210 /* AddLocationsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationsViewModelTests.swift; sourceTree = "<group>"; };
 		47E4091C2B14F8350004D619 /* UserDefaults+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Helpers.swift"; sourceTree = "<group>"; };
 		47E4091F2B151B1F0004D619 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		47E409212B151C050004D619 /* UserDefaults+Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Store.swift"; sourceTree = "<group>"; };
@@ -298,6 +304,7 @@
 		47833A0E2B172D7D0029747D /* ThunderstormTests */ = {
 			isa = PBXGroup;
 			children = (
+				47D3EEDF2B18141B00CE4210 /* Mocks */,
 				47D3EEDC2B180F1800CE4210 /* Extensions */,
 				47833A172B172D930029747D /* Cases */,
 			);
@@ -309,6 +316,7 @@
 			children = (
 				47833A182B172DDD0029747D /* ClearSkyFormatterTests.swift */,
 				47D3EEDA2B180EC900CE4210 /* AddLocationCellViewModelTest.swift */,
+				47D3EEE62B181A6100CE4210 /* AddLocationsViewModelTests.swift */,
 			);
 			path = Cases;
 			sourceTree = "<group>";
@@ -327,6 +335,15 @@
 				47D3EEDD2B180F5A00CE4210 /* Location+Mocks.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		47D3EEDF2B18141B00CE4210 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				47D3EEE02B18143700CE4210 /* MockStore.swift */,
+				47D3EEE22B18183100CE4210 /* MockGeocodingClient.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		47E4091B2B14F80F0004D619 /* Extensions */ = {
@@ -512,7 +529,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				47833A192B172DDD0029747D /* ClearSkyFormatterTests.swift in Sources */,
+				47D3EEE12B18143700CE4210 /* MockStore.swift in Sources */,
+				47D3EEE32B18183100CE4210 /* MockGeocodingClient.swift in Sources */,
 				47D3EEDB2B180EC900CE4210 /* AddLocationCellViewModelTest.swift in Sources */,
+				47D3EEE72B181A6100CE4210 /* AddLocationsViewModelTests.swift in Sources */,
 				47D3EEDE2B180F5A00CE4210 /* Location+Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
